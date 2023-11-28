@@ -7,6 +7,7 @@ import Signup from "./views/Signup";
 import SurveyPublicView from "./views/SurveyPublicView";
 import Surveys from "./views/Surveys";
 import SurveyView from "./views/SurveyView";
+import SurveyAnswer from "./views/SurveyAnswer";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,10 @@ const router = createBrowserRouter([
         element: <SurveyView />,
       },
       {
-        path: "/surveys/:id",
-        element: <SurveyView />,
+        path: "/surveys/answer",
+        element: <SurveyAnswer />,
       },
+
     ],
   },
   {

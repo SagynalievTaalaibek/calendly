@@ -24,13 +24,15 @@ export default function Dashboard() {
       });
   }, []);
 
+  console.log('Dashboard', data);
+
   return (
     <PageComponent title="Dashboard">
       {loading && <div className="flex justify-center">Loading...</div>}
       {!loading && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-gray-700">
           <DashboardCard
-            title="Total Surveys"
+            title="Total Events"
             className="order-1 lg:order-2"
             style={{ animationDelay: '0.1s' }}
           >
@@ -48,7 +50,7 @@ export default function Dashboard() {
             </div>
           </DashboardCard>
           <DashboardCard
-            title="Latest Survey"
+            title="Latest Events"
             className="order-3 lg:order-1 row-span-2"
             style={{ animationDelay: '0.2s' }}
           >
@@ -84,10 +86,10 @@ export default function Dashboard() {
                 <div className="flex justify-between">
                   <TButton to={`/surveys/${data.latestSurvey.id}`} link>
                     <PencilIcon className="w-5 h-5 mr-2" />
-                    Edit Survey
+                    Edit Events
                   </TButton>
 
-                  <TButton link>
+                  <TButton to={"/surveys/answer"}>
                     <EyeIcon className="w-5 h-5 mr-2" />
                     View Answers
                   </TButton>
