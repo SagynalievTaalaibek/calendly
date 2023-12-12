@@ -55,6 +55,7 @@ export default function SurveyView() {
     if (id) {
       res = axiosClient.put(`/survey/${id}`, payload);
     } else {
+      console.log('/survey',payload);
       res = axiosClient.post("/survey", payload);
     }
 
@@ -63,9 +64,9 @@ export default function SurveyView() {
         console.log(res);
         navigate("/surveys");
         if (id) {
-          showToast("The survey was updated");
+          showToast("The event was updated");
         } else {
-          showToast("The survey was created");
+          showToast("The event was created");
         }
       })
       .catch((err) => {
@@ -111,7 +112,7 @@ export default function SurveyView() {
 
   return (
     <PageComponent
-      title={!id ? "Create new Survey" : "Update Survey"}
+      title={!id ? "Create new Event" : "Update Event"}
       buttons={
         <div className="flex gap-2">
           <TButton color="green" href={`/survey/public/${survey.slug}`}>
@@ -173,7 +174,7 @@ export default function SurveyView() {
                   htmlFor="title"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Survey Title
+                  Event Title
                 </label>
                 <input
                   type="text"
@@ -183,7 +184,7 @@ export default function SurveyView() {
                   onChange={(ev) =>
                     setSurvey({ ...survey, title: ev.target.value })
                   }
-                  placeholder="Survey Title"
+                  placeholder="Event Title"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 />
               </div>
@@ -205,7 +206,7 @@ export default function SurveyView() {
                   onChange={(ev) =>
                     setSurvey({ ...survey, description: ev.target.value })
                   }
-                  placeholder="Describe your survey"
+                  placeholder="Describe your event"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 ></textarea>
               </div>

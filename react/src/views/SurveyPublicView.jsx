@@ -12,7 +12,7 @@ export default function SurveyPublicView() {
   });
   const [loading, setLoading] = useState(false);
   const { slug } = useParams();
-
+  
   useEffect(() => {
     setLoading(true);
     axiosClient
@@ -34,7 +34,7 @@ export default function SurveyPublicView() {
   function onSubmit(ev) {
     ev.preventDefault();
 
-    console.log(answers);
+    console.log('Answer', answers);
     axiosClient
       .post(`/survey/${survey.id}/answer`, {
         answers,
@@ -66,7 +66,7 @@ export default function SurveyPublicView() {
 
           {surveyFinished && (
             <div className="py-8 px-6 bg-emerald-500 text-white w-[600px] mx-auto">
-              Thank you for participating in the survey
+              Thank you for participating in the events
             </div>
           )}
           {!surveyFinished && (

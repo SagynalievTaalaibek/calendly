@@ -55,4 +55,16 @@ class AnswerController extends Controller
         $surveyQuestionAnswer->delete();
         return response()->json(null, 204);
     }
+
+    public function deleteAnswersBySurvey(Survey $survey)
+    {
+        try {
+            // Находим и удаляем все ответы для данного опроса
+            SurveyQuestionAnswer::where('survey_answer_id', $survey->id)->delete();
+            
+            return response()->json(['message' => 'All answers for the survey have been deleted'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Failed to delete answers'], 500);
+        }
+    }
 }

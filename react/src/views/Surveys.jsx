@@ -6,6 +6,7 @@ import PageComponent from "../components/PageComponent";
 import PaginationLinks from "../components/PaginationLinks";
 import SurveyListItem from "../components/SurveyListItem";
 import { useStateContext } from "../contexts/ContextProvider";
+import router from "../router";
 
 export default function Surveys() {
   const { showToast } = useStateContext();
@@ -40,12 +41,9 @@ export default function Surveys() {
     getSurveys();
   }, []);
 
-
-  
-
   return (
     <PageComponent
-      title="Surveys"
+      title="Events"
       buttons={
         <TButton color="green" to="/surveys/create">
           <PlusCircleIcon className="h-6 w-6 mr-2" />
