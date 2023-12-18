@@ -14,7 +14,7 @@ import Toast from "./Toast";
 
 const navigation = [
   { name: "Dashboard", to: "/" },
-  { name: "Event", to: "/surveys" },
+  { name: "Event", to: "/surveys" },   
 ];
 
 function classNames(...classes) {
@@ -74,7 +74,7 @@ export default function DefaultLayout() {
                                 "px-3 py-2 rounded-md text-sm font-medium"
                               )
                             }
-                          >
+                          > 
                             {item.name}
                           </NavLink>
                         ))}

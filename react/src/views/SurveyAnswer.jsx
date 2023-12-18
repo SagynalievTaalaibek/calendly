@@ -38,9 +38,6 @@ const SurveyAnswer = () => {
       <td className="border px-4 py-2">{group.responses[1].answer}</td>
       <td className="border px-4 py-2">{group.responses[2].answer}</td>
       <td className="border px-4 py-2">{group.responses[3].answer}</td>
-      {/* <td className="border px-4 py-2">
-        <button onClick={() => handleDeleteAll(group.survey_answer_id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить все</button>
-      </td> */}
     </tr>
   ));
 
@@ -54,7 +51,6 @@ const SurveyAnswer = () => {
               <th className="bg-gray-200 border px-4 py-2">Email</th>
               <th className="bg-gray-200 border px-4 py-2">Date</th>
               <th className="bg-gray-200 border px-4 py-2">Time</th>
-              {/* <th className="bg-gray-200 border px-4 py-2">Действие</th> */}
             </tr>
           </thead>
           <tbody>
